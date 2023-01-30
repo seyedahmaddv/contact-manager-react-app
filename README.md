@@ -49,3 +49,34 @@ function AddPersonForm() {
     );
 
 }
+
+For now, we just prevent the default behavior when the form is submitted.
+
+
+
+PeopleList received an array representing the contacts and renders a list on the page:
+function PeopleList(props) {
+  const arr = props.data;
+  const listItems = arr.map((val, index) =>
+    <li key={index}>{val}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+
+Now we can render our components on the page and include some initial data:
+
+const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];
+
+
+
+const el = (
+
+  <div>
+
+    <AddPersonForm />
+
+    <PeopleList data={contacts} />
+
+  </div>
+
+);
